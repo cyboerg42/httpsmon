@@ -1,0 +1,24 @@
+{
+  "name": "httpsmon",
+  "version": "0.0.1",
+  "description": "monitor HTTPs via AWS Lambda",
+  "main": "index.js",
+  "dependencies": {
+    "index": "^0.4.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyborg00222/httpsmon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyborg00222/httpsmon/issues"
+  },
+  "homepage": "https://github.com/cyborg00222/httpsmon#readme"
+}

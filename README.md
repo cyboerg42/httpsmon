@@ -9,7 +9,7 @@ npm install
 zip -r * ../httpsmon.zip
 ```
 
-now upload the zip to AWS and deploy a new lambda project. - don't forget to create and deploy a API endpoint.
+now upload the zip to AWS and deploy a new lambda project. - don't forget to create and deploy an API endpoint.
 
 #### Install curl.
 

@@ -36,8 +36,29 @@ nano /root/scripts/httpmon.sh
 #### Install crontab
 ```
 crontab -e
-* * * * * /bin/bash /home/root/scripts/httpsMON.sh https://demo.example.com/login.php
-* * * * * ( sleep 15 ; /home/root/scripts/httpsMON.sh https://demo.example.com/login.php)
-* * * * * ( sleep 30 ; /home/root/scripts/httpsMON.sh https://demo.example.com/login.php)
-* * * * * ( sleep 45 ; /home/root/scripts/httpsMON.sh https://demo.example.com/login.php)
+SA_API_ENDPOINT="https://bhirx7b3p8.execute-api.sa-east-1.amazonaws.com/default/serverless_httpsMON"
+SA_API_KEY="2IBJkyxXoG7EUWI6MTZnJhTf33Klr6Tyk9Nchxmg0"
+
+* * * * * /bin/bash /home/root/scripts/httpsMON.sh https://hot_spare.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY
+
+* * * * * /bin/bash /home/root/scripts/httpsMON.sh https://old.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY
+* * * * * ( sleep 30 ; /home/root/scripts/httpsMON.sh https://old.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+
+* * * * * /bin/bash /home/root/scripts/httpsMON.sh https://demo.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY
+* * * * * ( sleep 15 ; /home/root/scripts/httpsMON.sh https://demo.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 30 ; /home/root/scripts/httpsMON.sh https://demo.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 45 ; /home/root/scripts/httpsMON.sh https://demo.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+
+* * * * * /bin/bash /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY
+* * * * * ( sleep 5 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 10 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 15 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 20 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 25 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 30 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 35 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 40 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 45 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 50 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 55 ; /home/root/scripts/httpsMON.sh https://important.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY)
 ```

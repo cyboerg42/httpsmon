@@ -34,8 +34,12 @@ nano /root/scripts/httpmon.sh
 ```
 
 #### Install crontab
+
 ```
 crontab -e
+```
+
+```
 SA_API_ENDPOINT="https://bhirx7b3p8.execute-api.sa-east-1.amazonaws.com/default/serverless_httpsMON"
 SA_API_KEY="2IBJkyxXoG7EUWI6MTZnJhTf33Klr6Tyk9Nchxmg0"
 

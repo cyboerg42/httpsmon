@@ -37,6 +37,13 @@ crontab -e
 SA_API_ENDPOINT="https://bhirx7b3p8.execute-api.sa-east-1.amazonaws.com/default/serverless_httpsMON"
 SA_API_KEY="2IBJkyxXoG7EUWI6MTZnJhTf33Klr6Tyk9Nchxmg0"
 
+# for batch request
+* * * * * /bin/bash /root/scripts/batch_httpsMON.sh /home/root/scripts/sa_monitoring.list $SA_API_ENDPOINT $SA_API_KEY
+* * * * * ( sleep 15 ; /bin/bash /root/scripts/batch_httpsMON.sh /root/scripts/sa_monitoring.list $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 30 ; /bin/bash /root/scripts/batch_httpsMON.sh /root/scripts/sa_monitoring.list $SA_API_ENDPOINT $SA_API_KEY)
+* * * * * ( sleep 45 ; /bin/bash /root/scripts/batch_httpsMON.sh /root/scripts/sa_monitoring.list $SA_API_ENDPOINT $SA_API_KEY)
+
+# for normal one-by-one request (low jitter!)
 * * * * * /bin/bash /home/root/scripts/httpsMON.sh https://hot_spare.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY
 
 * * * * * /bin/bash /home/root/scripts/httpsMON.sh https://old.example.com/login.php $SA_API_ENDPOINT $SA_API_KEY

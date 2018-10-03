@@ -1,6 +1,6 @@
 #!/bin/bash
-#Peter Kowalsky - 02.10.2018 - httpsMON
-#Usage : ./httpsMON.sh <URL> - ./httpsMON.sh https://demo.example.com
+#Peter Kowalsky - 03.10.2018 - httpsMON
+#Usage : ./httpsMON.sh <URL> <API-ENDPOINT> <API KEY> - ./httpsMON.sh https://demo.example.com "https://bhirx7b3p8.execute-api.sa-east-1.amazonaws.com/default/serverless_httpsMON" "2IBJkyxXoG7EUWI6MTZnJhTf33Klr6Tyk9Nchxmg0"
 
 INFLUX_DB_LOC="https://user:password@influx.example.com/influxdb/write?db=db"
 
@@ -28,20 +28,8 @@ function getmessurementfromapi() {
 	curl $CURL_ARGS $INFLUX_DB_LOC --data-binary "lambda_httpsmon.total_time,destination=$target,source=$hostname value=$total_time"
 }
 
-# API Endpoint 1
-api_endpoint="https://bhirx7b3p8.execute-api.sa-east-1.amazonaws.com/default/serverless_httpsMON"))
-api_key="2IBJkyxXoG7EUWI6MTZnJhTf33Klr6Tyk9Nchxmg0"
-
-getmessurementfromapi $1 $api_endpoint $api_key
-
-# API Endpoint 2
-api_endpoint="https://pykex83374.execute-api.eu-west-1.amazonaws.com/default/serverless_httpsMON"))
-api_key="f33Klr6Tyk9Nchxmg02IBJkyxXoG7EUWI6MTZnJhT"
-
-getmessurementfromapi $1 $api_endpoint $api_key
-
-# API Endpoint 3
-api_endpoint="https://pykex83374.execute-api.eu-west-1.amazonaws.com/default/serverless_httpsMON"))
-api_key="f33Klr6Tyk9Nchxmg02IBJkyxXoG7EUWI6MTZnJhT"
+# API Endpoint
+api_endpoint=$2
+api_key=$3
 
 getmessurementfromapi $1 $api_endpoint $api_key

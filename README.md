@@ -27,12 +27,6 @@ mkdir /root/scripts/
 cp *.sh /root/scripts
 ```
 
-now add your API keys&endpoints.
-
-```
-nano /root/scripts/httpmon.sh
-```
-
 #### Install crontab
 
 ```
